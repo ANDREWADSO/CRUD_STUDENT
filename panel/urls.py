@@ -8,6 +8,6 @@ urlpatterns = [
     path('', views.index, name="index.html"),    
     path('listar', views.listar, name="listar"),
     path('agregar', views.agregar, name="agregar"),
-    path('actualizar', views.actualizar, name="actualizar"),
-    path('eliminar', views.eliminar, name="eliminar"),
+    path('actualizar/<int:idUsuario>', views.actualizar, name="actualizar"),
+    path('eliminar/<int:idUsuario>', views.eliminar, name="eliminar"),
 ]

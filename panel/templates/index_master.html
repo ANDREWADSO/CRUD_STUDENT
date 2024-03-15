@@ -69,10 +69,10 @@
                   </li>
                   <li><a><i class="fa fa-edit"></i> Mis Estudiantes <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="listar"><i class="fa fa-list"></i>Listar Estudiantes</a></li>
-                      <li><a href="agregar"><i class="fa fa-plus"></i>Agregar Estudiantes</a></li>
-                      <li><a href="actualizar"><i class="fa fa-refresh"></i>Actualizar Estudiantes</a></li>
-                      <li><a href="eliminar"><i class="fa fa-trash"></i>Eliminar Estudiantes</a></li>
+                      <li><a href="{% url 'listar' %}"><i class="fa fa-list"></i>Listar Estudiantes</a></li>
+                      <li><a href="{% url 'agregar' %}"><i class="fa fa-plus"></i>Agregar Estudiantes</a></li>
+                      <li><a href="/actualizar/0"><i class="fa fa-refresh"></i>Actualizar Estudiantes</a></li>
+                      <li><a href="/eliminar/0"><i class="fa fa-trash"></i>Eliminar Estudiantes</a></li>
                       
                     </ul>
                   </li>

@@ -19,7 +19,7 @@
 
                 <select id="id" name="id" >
                 {% for u in usuarios %}
-                   <option value="{{u.id}}">{{u.id}}</option>
+                   <option value="{{u.id}}" {%if u.id == usuario.id %} selected {% endif %}>{{ u.id }}</option>
                 {% endfor %}
                 </select>
 
@@ -34,7 +34,7 @@
               <div class="input-group-addon">
                 <i class="fa fa-address-card"></i>
               </div> 
-              <input id="nombre" name="nombre" type="text" required="required" class="form-control">
+              <input id="nombre" name="nombre" type="text" required="required" class="form-control" value="{{ usuario.nombre }}">
             </div>
           </div>
         </div>
@@ -46,7 +46,7 @@
               <div class="input-group-addon">
                 <i class="fa fa-address-card-o"></i>
               </div> 
-              <input id="apellido" name="apellido" type="text" required="required" class="form-control">
+              <input id="apellido" name="apellido" type="text" required="required" class="form-control" value="{{ usuario.apellido }}">
             </div>
           </div>
         </div>
@@ -57,7 +57,7 @@
               <div class="input-group-addon">
                 <i class="fa fa-inbox"></i>
               </div> 
-              <input id="correo" name="correo" type="email" class="form-control">
+              <input id="correo" name="correo" type="email" class="form-control" value="{{ usuario.correo }}">
             </div>
           </div>
         </div>
@@ -68,7 +68,7 @@
               <div class="input-group-addon">
                 <i class="fa fa-phone-square"></i>
               </div> 
-              <input id="telefono" name="telefono" type="number" required="required" class="form-control">
+              <input id="telefono" name="telefono" type="number" required="required" class="form-control" value="{{ usuario.telefono }}">
             </div>
           </div>
         </div>
@@ -79,7 +79,7 @@
               <div class="input-group-addon">
                 <i class="fa fa-calendar"></i>
               </div> 
-              <input id="fecha_nacimiento" name="fecha_nacimiento" type="date" class="form-control">
+              <input id="fecha_nacimiento" name="fecha_nacimiento" type="date" class="form-control" value="{{ usuario.fecha_nacimiento}}">
             </div>
           </div>
         </div> 

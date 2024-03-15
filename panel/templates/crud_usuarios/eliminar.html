@@ -16,9 +16,9 @@
           <i class="fa fa-id-badge"></i>
         </div> 
 
-        <select id="id" name="id" >
+        <select id="id" name="id" class="form-control">
         {% for u in usuarios %}
-           <option value="{{u.id}}">{{u.id}}</option>
+           <option value="{{u.id}}" {% if u.id == usuario.id  %} select { %endif %}> {{u.id}} - {{u.nombre}} {{u.apellido}} </option>
         {% endfor %}
         </select>
 
