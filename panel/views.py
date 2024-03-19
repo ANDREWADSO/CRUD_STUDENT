@@ -46,7 +46,7 @@ def actualizar (request, idUsuario):
                 user.apellido= request.POST.get('apellido')
                 user.correo= request.POST.get('correo')
                 user.telefono= request.POST.get('telefono')
-                user.fecha=request.POST.get('fecha')
+                user.fecha_nacimiento=request.POST.get('fecha')
                 user.fecha_registro = user_old.fecha_registro
                 user.save()
             return redirect ('listar')
@@ -74,12 +74,12 @@ def eliminar (request, idUsuario):
         else:
             users = Usuarios.objects.all()
             user= Usuarios.objects.get(id= idUsuario)
-            datos = {'usuarios': users, 'Usuario': users} 
-            return render(request,"crud_usuarios/eliminar.html",datos)
+            datos = {'usuarios': users, 'usuario': user} 
+            return render(request,"crud_usuarios/eliminar.html", datos)
         
     except Usuarios.DoesNotExist:
             users = Usuarios.objects.all()
             user= None
-            datos = {'usuarios': users, 'Usuario': users} 
+            datos = {'usuarios': users, 'usuario': user} 
             return render(request,"crud_usuarios/eliminar.html",datos)
         

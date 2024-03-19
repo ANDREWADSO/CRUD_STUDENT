@@ -18,9 +18,9 @@
 
         <select id="id" name="id" class="form-control">
         {% for u in usuarios %}
-           <option value="{{u.id}}" {% if u.id == usuario.id  %} select { %endif %}> {{u.id}} - {{u.nombre}} {{u.apellido}} </option>
+           <option value="{{u.id}}" {% if u.id == usuario.id  %} selected {% endif %}> {{u.id}} - {{u.nombre}} {{u.apellido}} </option>
         {% endfor %}
-        </select>
+      </select>
 
       </div>
     </div>
