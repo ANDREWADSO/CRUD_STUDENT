@@ -5,7 +5,7 @@
 <div class="right_col" role="main">
     <h1>Actualizar Estudiantes</h1>
 
-    <form action="actualizar" method="POST"> 
+    <form action="" method="POST"> 
         {% csrf_token %}
 
 
@@ -79,13 +79,14 @@
               <div class="input-group-addon">
                 <i class="fa fa-calendar"></i>
               </div> 
-              <input id="fecha_nacimiento" name="fecha_nacimiento" type="date" class="form-control" value="{{ usuario.fecha_nacimiento}}">
+              <input id="fecha_nacimiento" name="fecha_nacimiento" type="date" class="form-control" value="{{ usuario.fecha_nacimiento}}" min="1900-01-01" max="2006-01-01">
             </div>
           </div>
         </div> 
         <div class="form-group row">
           <div class="offset-4 col-8">
-            <button name="submit" type="submit" class="btn btn-warning"><i class="fa fa-refresh"></i>Actualizar Información</button>
+            <button name="back" class="btn btn-primary" onclick="history.back(); return false;"><i class="fa fa-angle-left"></i> Volver</button>
+            <button name="submit" type="submit" class="btn btn-warning"><i class="fa fa-refresh"></i> Actualizar Información </button>
           </div>
         </div>
       </form>

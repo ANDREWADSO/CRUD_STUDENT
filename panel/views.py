@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Usuarios
+from django.utils.timezone import now
+from django.db.models import Q
+
 
 
 # Create your views here.
@@ -12,9 +15,30 @@ def index (request):
     return render(request,"index.html")
 
 def listar (request):
-    users = Usuarios.objects.all()
-    datos = {'usuarios': users}
-    return render(request,"crud_usuarios/listar.html", datos)
+    if request.method == "POST": 
+        palabra = request.POST.get('keyword')
+        lista = Usuarios.objects.all()
+        
+        if palabra is not None:
+            resultado_busqueda = lista.filter(
+                Q(id_iconstains=palabra),
+                Q(nombre_icontains =palabra),
+                Q(apellido_icontains=palabra),
+                Q(correo_icontains= palabra),
+                Q(telefono_icontains=palabra)
+            )
+    
+            datos = {'usuarios': resultado_busqueda}
+            return render(request, "crud_usuarios/listar.html", datos)
+        else:
+            datos = {'usuarios': lista }
+            return render(request,"crud_usuarios/listar.html", datos)
+            
+        
+    else:
+        users = Usuarios.objects.order_by('-id')[:10]
+        datos = {'usuarios': users}
+        return render(request,"crud_usuarios/listar.html", datos)
 
 def agregar (request):
     if request.method == "POST":
