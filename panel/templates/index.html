@@ -8,18 +8,16 @@
         <p>¡Comencemos!</p>
 
 
-        <input type="holaaa">
-
         <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Averiguemos tu estilo de aprendizaje</title>
+<title>Test VAK.</title>
 </head>
 <body>
 
-<h2>Crear Pregunta y Respuestas</h2>
+<h2>Por favor responde las siguientes preguntas, selecciona una opción.</h2>
 
 <div id="questionContainer">
   <p id="questionText"></p>
@@ -27,26 +25,32 @@
 
 <form id="answerForm">
   <input type="radio" id="option1" name="answer" value="option1">
-  <label for="option1">Respuesta 1</label><br>
+  <label for="option1">a) Ver diagramas, gráficos y mapas mentales.</label><br>
 
   <input type="radio" id="option2" name="answer" value="option2">
-  <label for="option2">Respuesta 2</label><br>
+  <label for="option2">b) Escuchar grabaciones de conferencias o clases.</label><br>
 
   <input type="radio" id="option3" name="answer" value="option3">
-  <label for="option3">Respuesta 3</label><br>
+  <label for="option3">c) Participar en actividades prácticas o experimentos.</label><br>
 
   <input type="radio" id="option4" name="answer" value="option4">
-  <label for="option4">Respuesta 4</label><br><br>
+  <label for="option4">d) Leer y escribir resúmenes o notas.</label><br><br>
 
   <input type="button" value="Guardar Respuesta" onclick="guardarRespuesta()">
 </form>
 
 <script>
 var preguntas = [
-  "¿Cuál es la capital de Francia?",
-  "¿Quién escribió 'Romeo y Julieta'?",
-  "¿Cuál es el planeta más grande del sistema solar?",
-  "¿Cuál es el océano más grande del mundo?"
+  "1. ¿Cuál de las siguientes actividades prefieres al estudiar?",
+  "2. ¿Cómo recuerdas mejor la información?",
+  "3. Durante una conversación, ¿qué te ayuda a concentrarte mejor?",
+  "4. Cuando estás aprendiendo una nueva habilidad, ¿cómo prefieres recibir instrucciones?",
+  "5. ¿Qué tipo de ambiente de estudio te resulta más cómodo?",
+  "6. ¿Cómo prefieres repasar material antes de un examen?",
+  "7. ¿Qué estrategia te resulta más útil para aprender vocabulario nuevo?",
+  "8. ¿Qué te ayuda a mantenerte concentrado durante una conferencia o presentación?",
+  "9. ¿Cuál de estas actividades disfrutas más en tu tiempo libre?",
+  "10. ¿Cómo prefieres aprender sobre un nuevo tema o concepto?"
 ];
 
 var preguntaActual = 0;
@@ -92,10 +96,6 @@ mostrarPregunta();
 </body>
 </html>
 
-        
-        </body>
-        </html>
-           
 
 
         </div>
