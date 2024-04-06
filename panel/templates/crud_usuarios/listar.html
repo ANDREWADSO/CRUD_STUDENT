@@ -5,16 +5,17 @@
 <h1>Lista de Estudiantes</h1>
 
 <div>
-  <form action="" method="POST">
+  <form action="" method="POST" display: inline-block>
   {% csrf_token %}
+ 
+  <input type="text" name="keyword" id="keyword" class="form-control" style="width: 350px; display: inline-block;"><button type="submit" name="search" class="btn btn-success"> <i class="fa fa-search"></i></button>
   </form>
-  <input type="text" name="keyword" id="keyword" class="form-control" style="width: 350px; display: inline-block;">
+</div>
   
-  <button type="submit" name="search" class="btn btn-success"> <i class="fa fa-search"></i></button>
   
   <button name="agregar" class="btn btn-primary" onclick="window.location.href='agregar'"><i class="fa fa-plus"></i> Nuevo Estudiante</button>
   
-</div>
+
 
 
 <table class="table ">

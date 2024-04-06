@@ -6,6 +6,98 @@
         <div class="right_col" role="main">
         <h1>Bienvenido Aprendix...</h1>
         <p>¡Comencemos!</p>
+
+
+        <input type="holaaa">
+
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Averiguemos tu estilo de aprendizaje</title>
+</head>
+<body>
+
+<h2>Crear Pregunta y Respuestas</h2>
+
+<div id="questionContainer">
+  <p id="questionText"></p>
+</div>
+
+<form id="answerForm">
+  <input type="radio" id="option1" name="answer" value="option1">
+  <label for="option1">Respuesta 1</label><br>
+
+  <input type="radio" id="option2" name="answer" value="option2">
+  <label for="option2">Respuesta 2</label><br>
+
+  <input type="radio" id="option3" name="answer" value="option3">
+  <label for="option3">Respuesta 3</label><br>
+
+  <input type="radio" id="option4" name="answer" value="option4">
+  <label for="option4">Respuesta 4</label><br><br>
+
+  <input type="button" value="Guardar Respuesta" onclick="guardarRespuesta()">
+</form>
+
+<script>
+var preguntas = [
+  "¿Cuál es la capital de Francia?",
+  "¿Quién escribió 'Romeo y Julieta'?",
+  "¿Cuál es el planeta más grande del sistema solar?",
+  "¿Cuál es el océano más grande del mundo?"
+];
+
+var preguntaActual = 0;
+
+function mostrarPregunta() {
+  document.getElementById("questionText").innerText = preguntas[preguntaActual];
+}
+
+function guardarRespuesta() {
+  var respuestas = document.getElementsByName("answer");
+  var respuestaSeleccionada = "";
+
+  for (var i = 0; i < respuestas.length; i++) {
+    if (respuestas[i].checked) {
+      respuestaSeleccionada = respuestas[i].value;
+      break;
+    }
+  }
+
+  if (respuestaSeleccionada === "") {
+    alert("Por favor selecciona una respuesta.");
+    return;
+  }
+
+  // Aquí puedes agregar la lógica para guardar la respuesta en tu aplicación
+  // Por ahora, simplemente mostraremos un mensaje con la pregunta y la respuesta seleccionada
+  alert("Pregunta: " + preguntas[preguntaActual] + "\nRespuesta seleccionada: " + respuestaSeleccionada);
+
+  // Avanzar a la siguiente pregunta
+  preguntaActual++;
+  if (preguntaActual < preguntas.length) {
+    mostrarPregunta();
+  } else {
+    alert("Se han respondido todas las preguntas.");
+    // Aquí puedes agregar la lógica para finalizar el cuestionario o realizar otras acciones
+  }
+}
+
+// Mostrar la primera pregunta al cargar la página
+mostrarPregunta();
+</script>
+
+</body>
+</html>
+
+        
+        </body>
+        </html>
+           
+
+
         </div>
         <!-- /page content -->
 {% endblock %}

@@ -21,17 +21,17 @@ def listar (request):
         
         if palabra is not None:
             resultado_busqueda = lista.filter(
-                Q(id_iconstains=palabra),
-                Q(nombre_icontains =palabra),
-                Q(apellido_icontains=palabra),
-                Q(correo_icontains= palabra),
+                Q(id_iconstains=palabra)|
+                Q(nombre_icontains =palabra)|
+                Q(apellido_icontains=palabra)|
+                Q(correo_icontains= palabra)|
                 Q(telefono_icontains=palabra)
             )
     
             datos = {'usuarios': resultado_busqueda}
             return render(request, "crud_usuarios/listar.html", datos)
         else:
-            datos = {'usuarios': lista }
+            datos = {'usuarios': lista}
             return render(request,"crud_usuarios/listar.html", datos)
             
         
