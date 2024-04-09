@@ -107,3 +107,12 @@ def eliminar (request, idUsuario):
             datos = {'usuarios': users, 'usuario': user} 
             return render(request,"crud_usuarios/eliminar.html",datos)
         
+        
+    
+def preguntas(request):
+    # Aquí va la lógica para obtener y procesar las preguntas
+    # por ejemplo, puedes obtener las preguntas de la base de datos o de otro lugar
+    preguntas = ['¿Cuál es tu color favorito?', '¿Cuál es tu comida favorita?', '¿Cuál es tu película favorita?']
+    
+    # Renderiza la plantilla y pasa las preguntas como contexto
+    return render(request, 'preguntas.html', {'preguntas': preguntas})
